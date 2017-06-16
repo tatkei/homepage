@@ -174,11 +174,14 @@ function w3_close() {
 </script>
 <script type="text/javascript">var submitted=false;</script>
 <script type="text/javascript">
-document.getElementById("gForm").onsubmit = function() {gFrom_submitted()};
+var form = document.getElementById("gForm");
+form.onsubmit = function() {gFrom_submitted()};
 
 function gFrom_submitted() {
+    var form = document.getElementById("gForm");
     alert("The form was submitted");
-    document.getElementById("gForm").style.display = "none";
+    form.reset();
+    form.style.display = "none";
     document.getElementById("gFormMsg").style.display = "block";
 }
 </script>
